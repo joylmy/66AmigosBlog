@@ -1,0 +1,7 @@
+@import "nav.css";
+@import "body.css";
+@import "footer.css";
+
+.content-body{
+  padding: 10px
+}

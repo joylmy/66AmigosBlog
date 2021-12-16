@@ -1,0 +1,12 @@
+body {
+  padding: 30px;
+  background-image: url("../images/backgroud.jpeg");
+}
+.body-container {
+  padding: 10px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  justify-items: center;
+}
