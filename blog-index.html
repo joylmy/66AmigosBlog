@@ -1,44 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blogs</title>
-  <link rel="stylesheet" href="css/blog-index.css">
-</head>
-<body>
-  <div class="body-container">
-    <nav>
-      <div id="nav-flex-logo">
-        <h1 id="logo">66Amigos Diary</h1>
-      </div>
-      <ul id="nav-ul">
-        <li class="nav-item">
-          <a class="nav-link" href="index.html">HOME</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="blog-index.html">BLOGS</a>
-        </li>
-      </ul>
-    </nav>
-    <div class="content-body">
-      <div class="side-block">
-        <p>About</p>
-      </div>
-      <div class = "blog-card-block">
-        <div class="blog-card">
-          <p>Blog1</p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blogs</title>
+    <link rel="stylesheet" href="css/blog-index.css" />
+  </head>
+  <body>
+    <div class="body-container">
+      <nav>
+        <div id="nav-flex-logo">
+          <h1 id="logo">66Amigos Diary</h1>
         </div>
-        <div class="blog-card">
-          <p>Blog2</p>
+        <ul id="nav-ul">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">HOME</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="blog-index.html">BLOGS</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="content-body">
+        <figure class="about">
+          <img
+            src="./images/christmas.jpg"
+            alt="about-card-background"
+          />
+          <figcaption>
+            <img
+              src="./images/profile-img.jpg"
+              alt="profile-sample4"
+              class="profile"
+            />
+            <h2>66 Amigos<span>Full of Peace & Love</span></h2>
+            <p>A diary to record the wonderful time we spend togeter:).</p>
+            <!-- social media icon -->
+            
+            
+          </figcaption>
+        </figure>
+
+        <div class="blog-card-block">
+          <div class="blog-card-container">
+            <img class="card-img" src="images/fall.JPEG" alt="temp" />
+            <div class="card-body">
+              <h3>Niagra Fall</h3>
+              <h4>By Tuna</h4>
+              <p>Niagra Fall</p>
+              <div class="btn">
+                <a href="./blog-pages/blogs1.html">Read More</a>
+              </div>
+            </div>
+          </div>
+          <div class="blog-card-container">
+            <img class="card-img" src="images/birthday.jpeg" alt="temp" />
+            <div class="card-body">
+              <h3>Gerard's Birthday</h3>
+              <h4>By Mochi</h4>
+              <p>Happy birthday to our hottest Gerard!</p>
+              <div class="btn">
+                <a href="./blog-pages/blogs1.html">Read More</a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+
+      <footer class="footer">
+        <p>Made by Mengyuan(Joy) Li with Heart</p>
+      </footer>
     </div>
-    <footer class="footer">
-      <p>Made by Mengyuan(Joy) Li with Heart</p>
-    </footer>
-  </div>
-  
-</body>
+  </body>
 </html>

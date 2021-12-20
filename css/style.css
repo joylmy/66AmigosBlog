@@ -16,7 +16,6 @@
   justify-content: space-between;
 }
 
-
 @media (min-width: 600px) {
   .members-container {
     padding: 5px;
