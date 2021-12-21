@@ -6,7 +6,7 @@
   margin: 10px;
   min-width: 200px;
   max-width: 315px;
-  max-height: 400px;
+  max-height: 450px;
   width: 100%;
   color: black;
   text-align: left;
@@ -45,9 +45,9 @@
   border-color: transparent transparent transparent white;
 }
 .about figcaption a {
-  padding: 5px;
-  border: 1px solid #ffffff;
-  color: #ffffff;
+  padding: 3px;
+  border: 1px solid #575151;
+  color: black;
   font-size: 0.7em;
   text-transform: uppercase;
   margin: 10px 0;

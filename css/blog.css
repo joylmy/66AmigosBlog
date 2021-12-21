@@ -1,0 +1,59 @@
+@import "nav.css";
+@import "body.css";
+@import "footer.css";
+@import url("https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@400;500&display=swap");
+@import "profile-card.css";
+@import "img-gallery.css" ;
+
+.content-body {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;   
+
+  padding: 20px;
+  gap: 1em;
+}
+
+.blog-body {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: start;
+  gap: 2em;
+}
+
+
+
+/* middle screen */
+@media (min-width: 600px) and (max-width: 1000px) {
+  .content-body {
+    display: grid;
+    align-items: unset;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-areas: "sd sd main main main main main";
+  }
+
+  .side-block {
+    grid-area: sd;
+  }
+  .blog-body {
+    grid-area: main;
+  }
+}
+/* large screen */
+@media (min-width: 1001px) {
+  .content-body {
+    display: grid;
+    align-items: unset;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-areas: "sd sd main main main main main";
+  }
+
+  .side-block {
+    grid-area: sd;
+  }
+  .blog-body {
+    grid-area: main;
+  }
+}
