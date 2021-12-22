@@ -35,7 +35,12 @@
   box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.1);
   border-radius: 1em;
   background: #ece9e6;
+  transition: all 0.3s ease-in-out;
   background: linear-gradient(to right, #ffffff, #ece9e6);
+}
+
+.blog-card-container:hover {
+  transform: translate(-0.3rem, -0.3rem);
 }
 
 .card-body {
@@ -83,7 +88,7 @@ h4 {
   color: #ff6348;
 }
 
-.nav-link > a{
+.nav-link > a {
   color: black;
 }
 
@@ -120,6 +125,6 @@ h4 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: auto;
-    gap:4em;
+    gap: 4em;
   }
 }
