@@ -4,6 +4,11 @@ const leftbtn = document.querySelector(".move-btn.left");
 const rightbtn = document.querySelector(".move-btn.right");
 const galleryItems = document.querySelectorAll(".gallery-item");
 const numOfItems = galleryItems.length;
+const itemWidth = 30;
+let left=0;
+let leftInterval;
+let rightInterval;
+let scrollRate = 0.1;
 
 const selectItem = (e) => {
   if (e.target.classList.contains("active")) {
@@ -20,7 +25,70 @@ const selectItem = (e) => {
   e.target.classList.add("active");
 };
 
-// click right btn, click left btn
+function galleryWrapLeft() {
+  var first = gallery.children[0];
+  gallery.removeChild(first);
+  gallery.style.left = -itemWidth + "%";
+  gallery.appendChild(first);
+  gallery.style.left = "0%";
+}
+
+function galleryWrapRight() {
+  var last = gallery.children[gallery.children.length - 1];
+  gallery.removeChild(last);
+  gallery.insertBefore(last, gallery.children[0]);
+  gallery.style.left = -itemWidth + '%';
+}
+
+function moveLeft() {
+  left = left || 0;
+
+  leftInterval = setInterval(function () {
+    gallery.style.left = left + "%";
+
+    if (left > -itemWidth) {
+      left -= scrollRate;
+    } else {
+      left = 0;
+      galleryWrapLeft();
+    }
+  }, 1);
+}
+
+function moveRight() {
+  //Make sure there is element to the leftd
+  if (left > -itemWidth && left < 0) {
+    left = left - itemWidth;
+
+    var last = gallery.children[gallery.children.length - 1];
+    gallery.removeChild(last);
+    gallery.style.left = left + "%";
+    gallery.insertBefore(last, gallery.children[0]);
+  }
+
+  left = left || 0;
+
+  leftInterval = setInterval(function () {
+    gallery.style.left = left + "%";
+
+    if (left < 0) {
+      left += scrollRate;
+    } else {
+      left = -itemWidth;
+      galleryWrapRight();
+    }
+  }, 1);
+}
+
+function stopMovement() {
+  clearInterval(leftInterval);
+  clearInterval(rightInterval);
+}
+
+leftbtn.addEventListener('mouseenter',moveLeft);
+leftbtn.addEventListener('mouseleave',stopMovement);
+rightbtn.addEventListener('mouseenter',moveRight);
+rightbtn.addEventListener('mouseleave',stopMovement);
 
 (() => {
   // image path
