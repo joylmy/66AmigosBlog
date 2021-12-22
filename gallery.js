@@ -40,19 +40,29 @@ const galleryWrapRight = () => {
   gallery.style.left = -itemWidth + "%";
 };
 
+const scrollLeft = () => {
+  gallery.style.left = left + "%";
+  if (left > -itemWidth) {
+    left -= scrollRate;
+  } else {
+    left = 0;
+    galleryWrapLeft();
+  }
+};
+
+const scrollRight = () => {
+  gallery.style.left = left + "%";
+  if (left < 0) {
+    left += scrollRate;
+  } else {
+    left = -itemWidth;
+    galleryWrapRight();
+  }
+};
+
 const moveLeft = () => {
   left = left || 0;
-
-  leftInterval = setInterval(() => {
-    gallery.style.left = left + "%";
-
-    if (left > -itemWidth) {
-      left -= scrollRate;
-    } else {
-      left = 0;
-      galleryWrapLeft();
-    }
-  }, 1);
+  leftInterval = setInterval(scrollLeft, 1);
 };
 
 const moveRight = () => {
@@ -68,16 +78,7 @@ const moveRight = () => {
 
   left = left || 0;
 
-  rightInterval = setInterval(() => {
-    gallery.style.left = left + "%";
-
-    if (left < 0) {
-      left += scrollRate;
-    } else {
-      left = -itemWidth;
-      galleryWrapRight();
-    }
-  }, 1);
+  rightInterval = setInterval(scrollRight, 1);
 };
 
 function stopMovement() {
